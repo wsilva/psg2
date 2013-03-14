@@ -1,7 +1,112 @@
-\documentclass[12pt,a4paper]{abntex2}
+\documentclass[12pt,oneside,a4paper,english,french,spanish]{abntex2}
+
+\usepackage{cmap}                                   % Mapear caracteres especiais no PDF
+\usepackage{lmodern}                                % Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}                            % Seleção de códigos de fonte.
+\usepackage[utf8]{inputenc}                         % Determina a codificação utiizada (conversão automática dos acentos)
+\usepackage{makeidx}                                % Cria o indice
+\usepackage{hyperref}                               % Controla a formação do índice
+\usepackage{lastpage}                               % Usado pela Ficha catalográfica
+\usepackage{indentfirst}                            % Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}                                  % Controle das cores
+\usepackage{graphicx}                               % Inclusão de gráficos
+\usepackage[brazilian,hyperpageref]{backref}        % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}                       % Citações padrão ABNT
+
+% ---
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+% ---
+
+
+
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+\titulo{Modelo Canônico de\\ Projeto de pesquisa com \abnTeX}
+\autor{Wellington Figueira da Silva}
+\local{São Paulo, SP, Brasil}
+\data{2013}
+\instituicao{%
+  Universidade de Brasil -- UBr
+  \par
+  Faculdade de Arquitetura da Informação
+  \par
+  Programa de Pós-Graduação}
+\tipotrabalho{Tese (Doutorado)}
+% O preambulo deve conter o tipo do trabalho, o objetivo, 
+% o nome da instituição e a área de concentração 
+\preambulo{Modelo canônico de Projeto de pesquisa em conformidade
+com as normas ABNT apresentado à comunidade de usuários \LaTeX.}
+% ---
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\imprimirtitulo}, 
+		pdfauthor={\imprimirautor},
+    	pdfsubject={\imprimirpreambulo},
+		pdfkeywords={PALAVRAS}{CHAVES}{abnt}{abntex}{abntex2},
+	    pdfproducer={LaTeX with abnTeX2}, 	% producer of the document
+	    pdfcreator={\imprimirautor},
+    	colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+% --- 
+
+% --- 
+% Espaçamentos entre linhas e parágrafos 
+% --- 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% ---
+% compila o indice
+% ---
+\makeindex
 
 \begin{document}
 
-Iniciando
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% ---
+% Capa
+% ---
+\imprimircapa
+% ---
+
+% ---
+% Folha de rosto
+% ---
+\imprimirfolhaderosto
+% ---
+ss
+
+
+Iniciando o baguiu né, lokão
 
 \end{document}
